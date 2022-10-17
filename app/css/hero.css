@@ -1,0 +1,120 @@
+.hero {
+  background: var(--Very-Light-Gray);
+}
+
+.hero__wrapper {
+  display: flex;
+  align-items: center;
+  height: 75vh;
+}
+
+.hero__text {
+  width: 30%;
+
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1.8rem;
+
+  text-align: left;
+}
+
+.hero__title {
+  font-size: 2.6rem;
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--Dark-Blue);
+  max-width: 24.375rem;
+}
+
+.hero__parr {
+  display: inline;
+  font-size: .875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  /* max-width: 21.875rem; */
+  color: var(--Grayish-Blue);
+}
+
+.hero__images {
+  position: relative;
+  height: 100%;
+  width: 70%;
+}
+
+.hero__images::before {
+  content: ' ';
+  position: absolute;
+  background: url('/images/bg-intro-desktop.svg') no-repeat;
+  background-size: 120%;
+  background-position: 0% 62%;
+  width: 150%;
+  height: 100%;
+}
+
+.hero__images::after {
+  content: ' ';
+  position: absolute;
+  left: 40%;
+  background: url('/images/image-mockups.png') no-repeat;
+  background-size: 85%;
+  background-position: center 90%;
+  width: 120%;
+  height: 122%;
+}
+
+@media screen and (max-width: 640px) {
+  .hero__wrapper {
+    flex-direction: column-reverse;
+    gap: 3rem;
+    padding-bottom: 6em;
+    height: 90vh;
+  }
+
+  .hero__text {
+    width: 100%;
+    align-items: center;
+  }
+
+  .hero__title {
+    text-align: center;
+  }
+
+  .hero__parr {
+    font-size: 1rem;
+    width: 95%;
+  }
+
+  .hero__images {
+    width: 100%;
+  }
+
+  /* .hero__images::before {
+    display: none;
+  } */
+
+  .hero__images::before {
+    background: url('/images/bg-intro-mobile.svg') no-repeat;
+    background-size: cover;
+    background-position: center 58%;
+    width: 126%;
+    left: -20%;
+  }
+
+  .hero__images::after {
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background-size: 100% 100%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .hero__images::before {
+    background-size: 170%;
+  }
+
+  .hero__images::after {
+    background-position: center 10%;
+    height: 141%;
+  }
+}
